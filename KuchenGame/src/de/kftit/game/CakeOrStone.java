@@ -31,6 +31,9 @@ public class CakeOrStone {
 		this.isCake = isCake;
 	}
 
+	/**
+	 * Setzt die Bilder der Objekte und deren Flugrichtung.
+	 */
 	private void setImage(){
 		double zufall;
 		zufall = Utils.getRandomNumber();
@@ -75,6 +78,12 @@ public class CakeOrStone {
 			setPosY((int)Math.round(Utils.getRandomNumber()*getFeldLaenge()));
 		}
 	}
+	/**
+	 * Startrichtung der Objekte. Bei Rückgabe von 1 gleiten
+	 * die Objekte zum Anfang des Spiels nach rechts bzw. unten.
+	 * Bei -1 gleiten die Objekte nach links bzw. oben.
+	 * @return +-1
+	 */
 	private int makeRichtung(){
 		double zufall = Utils.getRandomNumber();
 		if(zufall < 0.5){
@@ -85,7 +94,15 @@ public class CakeOrStone {
 		}
 	}
 	
+	/**
+	 * Bewegung des Kuchen/Stein Objekts
+	 */
 	public void positionMove(){
+		// Bei erreichen des seitlichen Außenbereichs des Spielfeldes ist
+		// die Richtung so zu Ändern, dass das Objekt wieder ins Spielfeld
+		// gleitet. Durch Multiplizieren der Flugrichtung mit -1 wird das
+		// Objekt mit Einfallswinkel = Austrittswinkel zurück ins Spielfeld 
+		// geführt.
 		if(getPosX()+getSpeedX() > feldBreite){
 			setPosX(2*feldBreite-(getPosX()+getSpeedX()));
 			setSpeedX(-1*getSpeedX());
@@ -97,6 +114,11 @@ public class CakeOrStone {
 		else{
 			setPosX(getPosX()+getSpeedX());
 		}
+		// Bei erreichen des odenen bzw. unteren Außenbereichs des Spielfeldes ist
+		// die Richtung so zu Ändern, dass das Objekt wieder ins Spielfeld
+		// gleitet. Durch Multiplizieren der Flugrichtung mit -1 wird das
+		// Objekt mit Einfallswinkel = Austrittswinkel zurück ins Spielfeld 
+		// geführt.
 		if(getPosY()+getSpeedY() > feldLaenge){
 			setPosY(2*feldLaenge-(getPosY()+getSpeedY()));
 			setSpeedY(-1*getSpeedY());

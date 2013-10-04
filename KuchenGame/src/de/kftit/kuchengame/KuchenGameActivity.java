@@ -56,6 +56,9 @@ public class KuchenGameActivity extends RoboActivity implements Runnable,
 		return true;
 	}
 
+	/**
+	 * Erstellt neue Ansicht des Spielfeldes.
+	 */
 	private void refreshView() {
 		TextView anzeigePunkte = (TextView) findViewById(R.id.savedKuchen);
 		anzeigePunkte.setText(getText(R.string.isoKuchen) + ": "
@@ -82,6 +85,9 @@ public class KuchenGameActivity extends RoboActivity implements Runnable,
 		}
 	}
 
+	/**
+	 * Startet neues Level
+	 */
 	private void runLevel() {
 		int imageViewpos = 0;
 		spielfeldBreite = spielfeld.getWidth();
@@ -121,6 +127,7 @@ public class KuchenGameActivity extends RoboActivity implements Runnable,
 			imageViewpos++;
 		}
 		refreshView();
+		// Aufruf der Spielablauffunktion "countTime"
 		handler.postDelayed(this, 100);
 	}
 
@@ -129,12 +136,19 @@ public class KuchenGameActivity extends RoboActivity implements Runnable,
 
 		countTime();
 	}
+	/**
+	 * Beenden des Spiels
+	 */
 	@Override
 	public void onActionModeFinished(ActionMode mode) {
 		super.onActionModeFinished(mode);
 		game.setGameOver(true);
 		finish();
 	}
+	
+	/**
+	 * Steuerung des Spiels
+	 */
 	private void countTime() {
 		game.setUsedTime(game.getUsedTime() + 1);
 		refreshView();
@@ -166,6 +180,9 @@ public class KuchenGameActivity extends RoboActivity implements Runnable,
 		}
 	}
 
+	/**
+	 * Erfassen der Klicks des Anwenders
+	 */
 	@Override
 	public void onClick(View v) {
 		if (v.getId() == R.id.button1) {
