@@ -1,0 +1,8 @@
+<resources>
+
+    <color name="black_overlay">#66000000</color>
+    <color name="SchriftfarbeKuchenSpiel">#00F0F0</color>
+    <color name="background">#F00FAF88</color>
+    <color name="infoOverlay">#66666666</color>
+
+</resources>

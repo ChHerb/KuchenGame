@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Kuchen Game -->
+    <string name="title_activity_kuchen_aktivity">KuchenAktivity</string>
+    <string name="title_activity_kuchen_game">Kuchen Game</string>
+    <string name="zeit">Zeit</string>
+    <string name="isoKuchen">Punkte</string>
+    <string name="level">Level</string>
+    <string name="spielStart">Starten</string>
+    <string name="spielVorbei">Game Over :-(</string>
+    <string name="app_name">Klickspiel</string>
+    <string name="action_settings">Klickspiel</string> 
+
+</resources>
