@@ -1,0 +1,5 @@
+ACHTUNG:
+Kommt es zu folgendem Problem
+[2013-10-21 19:49:28 - Dex Loader] Unable to execute dex: Multiple dex files define Lde/kftit/game/CakeOrStone;
+[2013-10-21 19:49:28 - KuchenGame] Conversion to Dalvik format failed: Unable to execute dex: Multiple dex files define Lde/kftit/game/CakeOrStone;
+ist das Targetverzeichnis zu leeren. 
